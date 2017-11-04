@@ -44,7 +44,7 @@ class UpdateStates extends Component {
         <h1>Boolean States</h1>
         {data.map((item, key) => {
           return (
-            <div>
+            <div key={key}>
               <img 
                 src={item.prop ? require('./switch_on.png') : require('./switch_off.png')}
                 alt="switch"

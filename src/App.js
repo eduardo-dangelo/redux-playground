@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
 import ItemList from './containers/tab01/ItemList';
 import UpdateStates from './containers/tab02/UpdateStates';
+import BasicReduxForm from './containers/tab03/BasicReduxForm';
 import './App.css';
 
 class App extends Component {
@@ -18,7 +19,9 @@ class App extends Component {
           <Tab eventKey={2} title="Tab 2">
             <UpdateStates />
           </Tab>
-          <Tab eventKey={3} title="Tab 3" disabled>Tab 3 content</Tab>
+          <Tab eventKey={3} title="Tab 3">
+            <BasicReduxForm/>
+          </Tab>
         </Tabs>
       </div>
     );
