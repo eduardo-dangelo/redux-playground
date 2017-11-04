@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 class ItemList extends Component {
   renderList = () => {
     const { itens, selectItem } = this.props;
-    console.log(selectItem);
     return(
       <ListGroup>
         {itens.map((item, key) => {

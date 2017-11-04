@@ -12,7 +12,7 @@ class App extends Component {
         <header className="App-header">
           <h2>Redux Playground</h2>
         </header>
-        <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
+        <Tabs defaultActiveKey={3} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Tab 1">
             <ItemList />
           </Tab>
