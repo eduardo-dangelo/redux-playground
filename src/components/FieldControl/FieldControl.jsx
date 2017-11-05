@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap'; 
 
-const FieldControl = ({id, name, type, label, placeholder, className, meta, ...props, ...input}) => {
+const FieldControl = ({id, name, type, label, placeholder, className, meta, input, ...props, ...custom}) => {
     return (
       <div className={meta.touched && meta.error ? 'has-error' : ''}>
         <FormGroup controlId={id}>
