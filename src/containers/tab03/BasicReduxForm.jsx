@@ -78,7 +78,7 @@ const validate = values => {
   const { firstName, lastName, email } = values;
   const errors = {};
   if (!firstName || firstName.trim() === '') {
-    errors.firstName = 'First name is required';
+    errors.firstName = 'first Name is required';
   }
   if (!lastName || lastName.trim() === '') {
     errors.lastName = 'last name is required';
