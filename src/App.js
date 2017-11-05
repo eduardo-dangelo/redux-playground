@@ -3,7 +3,7 @@ import { Tabs, Tab } from 'react-bootstrap';
 import ItemList from './containers/tab01/ItemList';
 import UpdateStates from './containers/tab02/UpdateStates';
 import BasicReduxForm from './containers/tab03/BasicReduxForm';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   render() {
