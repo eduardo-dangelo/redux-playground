@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, FormGroup, ControlLabel, Label } from 'react-bootstrap';
 import { map } from 'lodash';
 import { reduxForm, Form, Field, SubmissionError } from 'redux-form';
 import FieldControl from '../../components/FieldControl/FieldControl';
@@ -47,6 +47,35 @@ class BasicReduxForm extends Component {
             placeholder="email"
             component={FieldControl}
           />
+          <FormGroup controlId="radio">
+          <ControlLabel>Random Question:</ControlLabel>
+          <div>
+            <label>
+              <Field
+                controlId="radio-group"
+                name="radio"
+                value="yes"
+                type="radio"
+                component="input"
+              />
+              {'  '}
+              yes
+            </label>
+          </div>
+          <div>
+            <label>
+              <Field
+                controlId="radio-group"
+                name="radio"
+                value="no"
+                type="radio"
+                component="input"
+              />
+              {'  '}
+              no
+            </label>
+          </div>
+          </FormGroup>
           <Button
             type="submit"
             bsStyle="primary"
