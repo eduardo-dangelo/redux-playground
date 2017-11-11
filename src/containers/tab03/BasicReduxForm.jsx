@@ -10,15 +10,14 @@ import './BasicReduxForm.scss';
 
 class BasicReduxForm extends Component {
 
-  submit = (values) => {
-    const { submitForm } = this.props;
-    console.log('values', values);
-    submitForm(values);
+  submit = (formValues) => {
+    const { submitForm, dispatch, reset } = this.props;
+    submitForm(formValues);
+    dispatch(reset('dinamicForm'));
   }
 
   render() {
     const { handleSubmit, pristine, reset, submitting, formValues } = this.props;
-    console.log('formValues', formValues);
 
     return (
       <Form onSubmit={handleSubmit(this.submit)}>
@@ -52,7 +51,6 @@ class BasicReduxForm extends Component {
           <div>
             <label>
               <Field
-                controlId="radio-group"
                 name="radio"
                 value="yes"
                 type="radio"
@@ -65,7 +63,6 @@ class BasicReduxForm extends Component {
           <div>
             <label>
               <Field
-                controlId="radio-group"
                 name="radio"
                 value="no"
                 type="radio"
@@ -104,7 +101,7 @@ class BasicReduxForm extends Component {
 }
 
 const validate = values => {
-  const { firstName, lastName, email } = values;
+  const { firstName, lastName, email, radio } = values;
   const errors = {};
   if (!firstName || firstName.trim() === '') {
     errors.firstName = 'first Name is required';
@@ -114,6 +111,9 @@ const validate = values => {
   }
   if (!email || email.trim() === '') {
     errors.email = 'email is required';
+  }
+  if (!radio || radio.trim() === '') {
+    errors.radio = 'radio is required';
   }
   return errors;
   console.log('errors', errors);

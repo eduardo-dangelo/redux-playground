@@ -4,6 +4,7 @@ import ItemSelected from './tab01/ItemSelectedReducer';
 import { reducer as states } from './tab02/UpdateStateReducer';
 import { reducer as formReducer } from 'redux-form';
 import { reducer as formValues } from './tab03/BasicReduxFormReducer';
+import { reducer as dinamicForm } from './tab04/DinamicFormReducer';
 
 const rootReducer = combineReducers({
   form: formReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   itemSelected: ItemSelected,
   states: states,
   formValues,
+  dinamicForm,
 });
 
 export default rootReducer;
