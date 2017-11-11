@@ -1,11 +1,32 @@
 import React from 'react';
-import { FormGroup, ControlLabel, FormControl, HelpBlock, Radio } from 'react-bootstrap'; 
+import { FormControl, Radio, HelpBlock } from 'react-bootstrap';
 
-const FieldControl = ({id, name, type, label, placeholder, className, meta, input, ...props, ...custom}) => {
-  return (
-    <div className={meta.touched && meta.error ? 'has-error' : ''}>
-      <FormGroup controlId={id}>
-        <ControlLabel>{label}</ControlLabel>
+const FieldControl = ({
+    name,
+    type,
+    placeholder,
+    value,
+    displayName,
+    className,
+    input,
+    meta: { touched, error, warning },
+    ...props,
+    ...custom
+  }) => {
+
+  let component = null;
+
+  switch(type) {
+    case 'radio': 
+      component = (
+        <Radio name={name} value={value} {...input} {...props} >
+          {displayName}
+        </Radio>
+      );
+      break;
+
+    default:
+      component = (
         <FormControl
           name={name}
           type={type}
@@ -14,8 +35,14 @@ const FieldControl = ({id, name, type, label, placeholder, className, meta, inpu
           {...input}
           {...props}
         /> 
-        {meta.touched && meta.error && <HelpBlock>{meta.error}</HelpBlock>}
-      </FormGroup>
+      );
+      break;
+  }
+
+  return (
+    <div className={touched && error ? 'has-error' : ''}>
+      {component}
+      {touched && ((error && <HelpBlock>{error}</HelpBlock>) || (warning && <HelpBlock>{warning}</HelpBlock>))}
     </div>
   );
 }

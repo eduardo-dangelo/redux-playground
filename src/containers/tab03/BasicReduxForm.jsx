@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button, FormGroup, ControlLabel, Label } from 'react-bootstrap';
+import { Button, FormGroup, ControlLabel } from 'react-bootstrap';
 import { map } from 'lodash';
-import { reduxForm, Form, Field, SubmissionError } from 'redux-form';
+import { reduxForm, Form, Field } from 'redux-form';
 import FieldControl from '../../components/FieldControl/FieldControl';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -9,7 +9,6 @@ import { actions } from '../../reducers/tab03/BasicReduxFormReducer';
 import './BasicReduxForm.scss';
 
 class BasicReduxForm extends Component {
-
   submit = (formValues) => {
     const { submitForm, dispatch, reset } = this.props;
     submitForm(formValues);
@@ -17,61 +16,54 @@ class BasicReduxForm extends Component {
   }
 
   render() {
-    const { handleSubmit, pristine, reset, submitting, formValues } = this.props;
+    const { handleSubmit, reset, formValues } = this.props;
 
     return (
       <Form onSubmit={handleSubmit(this.submit)}>
         <h1>Basic Form</h1>
         <div className="form-container">
-          <Field
-            id="controlId-name"
-            name="firstName"
-            type="text"
-            label="First Name:"
-            placeholder="First Name"
-            component={FieldControl}
-          />
-          <Field
-            id="controlId-lastName"
-            name="lastName"
-            type="text"
-            label="Last Name:"
-            placeholder="Last Name"
-            component={FieldControl}
-          />
-          <Field
-            id="controlId-email"
-            name="email"
-            label="Email Address:"
-            placeholder="email"
-            component={FieldControl}
-          />
+          <FormGroup controlId="first-name">
+            <ControlLabel>First Name:</ControlLabel>
+              <Field
+                name="firstName"
+                type="text"
+                placeholder="First Name"
+                component={FieldControl}
+              />
+          </FormGroup>
+          <FormGroup controlId="lastName">
+            <ControlLabel>Last Name:</ControlLabel>
+              <Field
+                name="lastName"
+                type="text"
+                placeholder="Last Name"
+                component={FieldControl}
+              />
+          </FormGroup>
+          <FormGroup controlId="email">
+            <ControlLabel>Email:</ControlLabel>
+            <Field
+              name="email"
+              placeholder="email"
+              component={FieldControl}
+            />
+          </FormGroup>
           <FormGroup controlId="radio">
-          <ControlLabel>Random Question:</ControlLabel>
-          <div>
-            <label>
-              <Field
-                name="radio"
-                value="yes"
-                type="radio"
-                component="input"
-              />
-              {'  '}
-              yes
-            </label>
-          </div>
-          <div>
-            <label>
-              <Field
-                name="radio"
-                value="no"
-                type="radio"
-                component="input"
-              />
-              {'  '}
-              no
-            </label>
-          </div>
+            <ControlLabel>Random Question:</ControlLabel>
+            <Field
+              name="radio"
+              value="yes"
+              displayName="Yes"
+              type="radio"
+              component={FieldControl}
+            />
+            <Field
+              name="radio"
+              value="no"
+              displayName="No"
+              type="radio"
+              component={FieldControl}
+            />
           </FormGroup>
           <Button
             type="submit"
@@ -101,22 +93,21 @@ class BasicReduxForm extends Component {
 }
 
 const validate = values => {
-  const { firstName, lastName, email, radio } = values;
+  console.log(values)
   const errors = {};
-  if (!firstName || firstName.trim() === '') {
+  if (!values.firstName) {
     errors.firstName = 'first Name is required';
   }
-  if (!lastName || lastName.trim() === '') {
+  if (!values.lastName) {
     errors.lastName = 'last name is required';
   }
-  if (!email || email.trim() === '') {
+  if (!values.email) {
     errors.email = 'email is required';
   }
-  if (!radio || radio.trim() === '') {
+  if (!values.radio) {
     errors.radio = 'radio is required';
   }
   return errors;
-  console.log('errors', errors);
 }
 
 function mapStateToProps(state) {
