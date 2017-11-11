@@ -21,87 +21,70 @@ class DinamicForm extends Component {
       <h1>Dinamic Form</h1>
       <h3>Selecting form values</h3>
         <div className="form-container">
-          <Field 
-            id="firstName"
-            name="firstName"
-            label="First Name:"
-            placeholder="first name"
-            component={FieldControl}
-          />
-          {firstName && (
-            <Field
-              id="lastName"
-              name="lastName"
-              label="Last Name:"
-              placeholder="last name"
+          <FormGroup controlId="first-name">
+            <ControlLabel>First Name:</ControlLabel>
+            <Field 
+              name="firstName"
+              placeholder="first name"
               component={FieldControl}
             />
+          </FormGroup>
+          {firstName && (
+            <FormGroup controlId="last-name">
+              <ControlLabel>Last Name:</ControlLabel>
+              <Field
+                name="lastName"
+                placeholder="last name"
+                component={FieldControl}
+              />
+            </FormGroup>
           )}
           {lastName && (
-            <Field
-              id="email"
-              name="email"
-              label="Email Address:"
-              placeholder="email"
-              component={FieldControl}
-            />
+            <FormGroup controlId="email">
+              <ControlLabel>Email:</ControlLabel>
+              <Field
+                name="email"
+                placeholder="email"
+                component={FieldControl}
+              />
+            </FormGroup>
           )}
           {email && (
-            <FormGroup controlId="randomQuestionOne">
-            <ControlLabel>Random Question:</ControlLabel>
-              <div>
-                <label>
-                  <Field
-                    name="randomQuestionOne"
-                    value="yes"
-                    type="radio"
-                    component="input"
-                  />
-                  {'  '}
-                  yes
-                </label>
-              </div>
-              <div>
-                <label>
-                  <Field
-                    name="randomQuestionOne"
-                    value="no"
-                    type="radio"
-                    component="input"
-                  />
-                  {'  '}
-                  no
-                </label>
-              </div>
+            <FormGroup controlId="random-question-one">
+              <ControlLabel>Random Question:</ControlLabel>
+              <Field
+                name="randomQuestionOne"
+                type="radio"
+                value="yes"
+                displayName="Yes"
+                component={FieldControl}
+              />
+              <Field
+                name="randomQuestionOne"
+                type="radio"
+                value="no"
+                displayName="No"
+                component={FieldControl}
+              />
             </FormGroup>
           )}
           {randomQuestionOne && (
-            <FormGroup controlId="randomQuestionTwo">
-            <ControlLabel>Random Question:</ControlLabel>
-              <div>
-                <label>
-                  <Field
-                    name="randomQuestionTwo"
-                    value="yes"
-                    type="radio"
-                    component="input"
-                  />
-                  {'  '}
-                  yes
-                </label>
-              </div>
-              <div>
-                <label>
-                  <Field
-                    name="randomQuestionTwo"
-                    value="no"
-                    type="radio"
-                    component="input"
-                  />
-                  {'  '}
-                  no
-                </label>
-              </div>
+            <FormGroup controlId="random-question-two">
+              <ControlLabel>Random Question 2:</ControlLabel>
+              <Field
+                name="randomQuestionTwo"
+                type="radio"
+                value="yes"
+                displayName="Yes"
+                component={FieldControl}
+              />
+              <Field
+                name="randomQuestionTwo"
+                type="radio"
+                value="no"
+                displayName="No"
+                component={FieldControl}
+              />
             </FormGroup>
           )}
           {randomQuestionTwo && (
