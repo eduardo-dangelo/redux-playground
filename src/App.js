@@ -3,7 +3,8 @@ import { Tabs, Tab } from 'react-bootstrap';
 import ItemList from './containers/tab01/ItemList';
 import UpdateStates from './containers/tab02/UpdateStates';
 import BasicReduxForm from './containers/tab03/BasicReduxForm';
-import DinamicForm from './containers/tab04/DinamicForm'
+import DinamicForm from './containers/tab04/DinamicForm';
+import FieldArrayForm from './containers/tab05/FieldArrayForm';
 import './App.scss';
 
 class App extends Component {
@@ -13,8 +14,8 @@ class App extends Component {
         <header className="App-header">
           <h2>Redux Playground</h2>
         </header>
-        <Tabs defaultActiveKey={4} id="uncontrolled-tab-example">
-          <Tab eventKey={1} title="Tab 1">
+        <Tabs defaultActiveKey={5} id="uncontrolled-tab-example">
+          <Tab eventKey={1} title="Switch Content">
             <ItemList />
           </Tab>
           <Tab eventKey={2} title="Boolean States">
@@ -25,6 +26,9 @@ class App extends Component {
           </Tab>
           <Tab eventKey={4} title="Dinamic Form">
             <DinamicForm />
+          </Tab>
+          <Tab eventKey={5} title="Field Array">
+            <FieldArrayForm />
           </Tab>
         </Tabs>
       </div>
