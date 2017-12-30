@@ -16,9 +16,11 @@ class FieldArrayForm extends Component {
         <h1>Field Array Form</h1>
         <FieldArray name="user" component={UserForm}/>
         <div>
-          <Button type="submit" bsStyle="primary">
-            Submit
-          </Button>
+          <div className="form-container">
+            <Button type="submit" bsStyle="primary" block>
+              Submit
+            </Button>
+          </div>
         </div>
       </Form>
     );
