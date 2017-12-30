@@ -3,6 +3,7 @@ import { Button, FormGroup, ControlLabel } from 'react-bootstrap';
 import { Field, FieldArray } from 'redux-form';
 import FieldControl from '../../../../components/FieldControl/FieldControl';
 import Hobby from './components/Hobby';
+import { map } from 'lodash';
 
 class UserForm  extends React.Component {
   componentWillMount = () => {
@@ -47,32 +48,32 @@ class UserForm  extends React.Component {
           </Button>
         </div>
         <h3>Users</h3>
-        {fields.map((item, key) => {
+        {map(fields, ((item, key) => {
           return (
-            <div>
-            <div key={key} className="form-container">
-              <FormGroup>
-                <ControlLabel>Name:</ControlLabel>
-                <Field
-                  name={`user[${key}].name`}
-                  placeholder="name"
-                  component={FieldControl}
-                />
-              </FormGroup>
-                <FieldArray
-                  name={`user[${key}].hobby`}
-                  component={Hobby}
-                />
-            </div>
-            <Button
-              bsStyle="default"
-              onClick={this.removeField(key)}
-            >
-              Remove User
-            </Button>
+            <div key={key}>
+              <div className="form-container">
+                <FormGroup>
+                  <ControlLabel>Name:</ControlLabel>
+                  <Field
+                    name={`user[${key}].name`}
+                    placeholder="name"
+                    component={FieldControl}
+                  />
+                </FormGroup>
+                  <FieldArray
+                    name={`user[${key}].hobbies`}
+                    component={Hobby}
+                  />
+              </div>
+              <Button
+                bsStyle="default"
+                onClick={this.removeField(key)}
+              >
+                Remove User
+              </Button>
             </div>
           );
-        })}
+        }))}
       </div>
     );
   }

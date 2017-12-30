@@ -37,7 +37,7 @@ class Hobby extends React.Component {
                 <InputGroup>
                   <Field
                     key={key}
-                    name={`hobby`}
+                    name={`hobbies[${key}].hobby`}
                     component={FieldControl}
                   />
                   <InputGroup.Button>

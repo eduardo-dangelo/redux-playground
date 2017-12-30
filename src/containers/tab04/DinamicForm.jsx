@@ -109,7 +109,12 @@ class DinamicForm extends Component {
           <div className="form-container">
           <h4>Result</h4>
             {map(formValues, ((item, key) => {
-              return <p key={key}><strong>{key}{': '}</strong>{item}</p>;
+              console.log('dinamic form', formValues)
+              return (
+              <div key={key}>
+                <strong>{key}{': '}</strong>
+              
+              </div>);
             }))}
           </div>
         )}
