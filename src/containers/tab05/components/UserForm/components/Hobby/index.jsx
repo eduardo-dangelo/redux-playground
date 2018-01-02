@@ -29,24 +29,22 @@ class Hobby extends React.Component {
 
     return (
       <div>
-        
-          {fields.map((item, key) => {
-            return (
-              <FormGroup>
-                <ControlLabel>Hobby {key + 1}:</ControlLabel>
-                <InputGroup>
-                  <Field
-                    key={key}
-                    name={`hobbies[${key}].hobby`}
-                    component={FieldControl}
-                  />
-                  <InputGroup.Button>
-                    <Button onClick={this.handleRemoveHobby(key)}>Remove</Button>
-                  </InputGroup.Button>
-                </InputGroup>
-              </FormGroup>
-            );
-          })}
+        {fields.map((item, key) => {
+          return (
+            <FormGroup key={key}>
+              <ControlLabel>Hobby {key + 1}:</ControlLabel>
+              <InputGroup>
+                <Field
+                  name={item}
+                  component={FieldControl}
+                />
+                <InputGroup.Button>
+                  <Button onClick={this.handleRemoveHobby(key)}>Remove</Button>
+                </InputGroup.Button>
+              </InputGroup>
+            </FormGroup>
+          );
+        })}
         
         <Button bsStyle="primary" onClick={this.handleAddHobby}>
           Add Hobby
