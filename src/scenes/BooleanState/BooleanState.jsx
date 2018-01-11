@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { actions } from '../../reducers/tab02/UpdateStateReducer';
+import { actions } from './BooleanState_Reducer';
 import { ButtonGroup, Button } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';

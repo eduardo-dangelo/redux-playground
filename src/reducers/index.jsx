@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
-import ItemList from './tab01/ItemListReducer';
-import ItemSelected from './tab01/ItemSelectedReducer';
-import { reducer as states } from './tab02/UpdateStateReducer';
+import ItemList from '../scenes/ItemList/ItemList_Reducer';
+import ItemSelected from '../scenes/ItemList/ItemSelected_Reducer';
+import { reducer as states } from '../scenes/BooleanState/BooleanState_Reducer';
 import { reducer as formReducer } from 'redux-form';
-import { reducer as formValues } from './tab03/BasicReduxFormReducer';
-import { reducer as dinamicForm } from './tab04/DinamicFormReducer';
-import { reducer as fieldArrayForm } from '../containers/tab05/Reducer'
+import { reducer as formValues } from '../scenes/BasicForm/BasicForm_Reducer';
+import { reducer as dinamicForm } from '../scenes/DinamicForm/DinamicForm_Reducer';
+import { reducer as fieldArrayForm } from '../scenes/FieldArrayForm/FieldArrayForm_Reducer';
+import { reducer as loadFromState } from '../scenes/LoadFromState/LoadFromState_Reducer';
 
 const rootReducer = combineReducers({
   form: formReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   formValues,
   dinamicForm,
   fieldArrayForm,
+  loadFromState,
 });
 
 export default rootReducer;

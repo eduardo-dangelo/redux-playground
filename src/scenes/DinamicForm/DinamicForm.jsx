@@ -5,7 +5,7 @@ import { reduxForm, Form, Field, formValueSelector } from 'redux-form';
 import { bindActionCreators } from 'redux';
 import { FormGroup, ControlLabel, Button } from 'react-bootstrap';
 import FieldControl from '../../components/FieldControl/FieldControl';
-import { actions } from '../../reducers/tab04/DinamicFormReducer';
+import { actions } from './DinamicForm_Reducer';
 
 class DinamicForm extends Component {
   submit = (formValues) => {

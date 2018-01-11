@@ -4,9 +4,9 @@ import { Button } from 'react-bootstrap';
 import UserForm from './components/UserForm';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { actions } from './Reducer';
+import { actions } from './FieldArrayForm_Reducer';
 import { map } from 'lodash';
-import './style.scss';
+import './FieldArrayForm_Style.scss';
 
 class FieldArrayForm extends Component {
   submit = (formValues) => {
