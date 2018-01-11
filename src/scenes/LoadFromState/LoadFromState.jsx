@@ -29,17 +29,17 @@ class LoadFromState extends React.Component {
     const users = {
       carla: {
         name: 'Carla',
-        dob: '10/07/1998',
+        dob: '10/08/1998',
         email: 'carla@carla.com',
       },
       bruna: {
         name: 'Bruna',
-        dob: '10/07/1988',
+        dob: '01/12/1999',
         email: 'bruna@bruna.com',
       },
       marta: {
         name: 'Marta',
-        dob: '10/07/1999',
+        dob: '16/02/2000',
         email: 'marta@marta.com',
       },
     };
@@ -87,7 +87,7 @@ class LoadFromState extends React.Component {
         <div>
           <h4>User 3</h4>
           <p><strong>Name:</strong> Marta</p>
-          <p><strong>Date of birth</strong> 16/02/1988</p>
+          <p><strong>Date of birth</strong> 16/02/2000</p>
           <p><strong>email</strong> marta@marta.com</p>
           <Button onClick={this.handleLoadUserClick(users.marta)}>Load user</Button>  
         </div>
