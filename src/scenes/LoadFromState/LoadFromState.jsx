@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux';
 
 class LoadFromState extends React.Component {
   componentWillReceiveProps(nextProps) {
-    const { loadUserAccount, change } = this.props;
+    const { change } = this.props;
 
     if (nextProps.loadUserAccount) {
       change('name', nextProps.loadUserAccount.name);
