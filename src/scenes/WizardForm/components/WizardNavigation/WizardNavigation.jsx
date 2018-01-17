@@ -13,12 +13,12 @@ class WizardNavigation extends Component {
             </div>
           </li>
           <li>
-            <div className={ step >= 2 ? 'wizard-navigation-btn' : 'wizard-navigation-btn disabled' } onClick={ step >= 2 && onclickStep2 }>
+            <div className={ step >= 2 ? 'wizard-navigation-btn' : 'wizard-navigation-btn disabled' } onClick={ onclickStep2 }>
               Step 2
             </div>
           </li>
           <li>
-            <div className={ step >= 3 ? 'wizard-navigation-btn' : 'wizard-navigation-btn disabled' } onClick={ step >= 3 && onclickStep3 }>
+            <div className={ step >= 3 ? 'wizard-navigation-btn' : 'wizard-navigation-btn disabled' } onClick={ onclickStep3 }>
               Step 3
             </div>
           </li>

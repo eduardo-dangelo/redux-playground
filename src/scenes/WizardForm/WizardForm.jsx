@@ -43,15 +43,19 @@ class WizardForm extends Component {
   }
 
   handleClickStep2 = () => {
-    this.setState({
-      page: 2,
-    });
+    if ( this.state.step >= 2 ) {
+      this.setState({
+        page: 2,
+      });
+    }
   }
 
   handleClickStep3 = () => {
-    this.setState({
-      page: 3,
-    });
+    if ( this.state.step === 3 ) {
+      this.setState({
+        page: 3,
+      });
+    }
   }
 
   render() {
