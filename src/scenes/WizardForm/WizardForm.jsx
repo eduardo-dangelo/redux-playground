@@ -4,6 +4,10 @@ import './style.scss';
 import Step1 from './components/Step1/Step1';
 import Step2 from './components/Step2/Step2';
 import Step3 from './components/Step3/Step3';
+import { actions } from './WizardForm_Reducer';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { map } from 'lodash';
 
 class WizardForm extends Component {
   state = {
@@ -33,7 +37,9 @@ class WizardForm extends Component {
   }
 
   handleSubmit = (formValues) => {
-    console.log(formValues);
+    const { submitForm } = this.props;
+
+    submitForm(formValues);
   }
 
   handleClickStep1 = () => {
@@ -59,6 +65,7 @@ class WizardForm extends Component {
   }
 
   render() {
+    const { formValues } = this.props;
     const { step, page } = this.state;
 
     return (
@@ -83,9 +90,31 @@ class WizardForm extends Component {
           <Step3 onSubmit={this.handleSubmit} onClickBack={this.prevStep} />
         )}
 
+        { formValues && (
+          <div className="form-container">
+            {map(formValues, (item, key) => {
+              return (
+                <div key={key}>
+                  <strong>{key}{': '}</strong>{item}
+                </div>
+              );
+            })}
+          </div>
+        )}
+
       </div>
     );
   }
 }
 
-export default WizardForm;
+export function mapStateToProps(state) {
+  return  {
+    formValues: state.wizardFormValues,
+  }
+}
+
+export function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ ...actions }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(WizardForm);

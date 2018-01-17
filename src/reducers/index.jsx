@@ -7,6 +7,7 @@ import { reducer as formValues } from '../scenes/BasicForm/BasicForm_Reducer';
 import { reducer as dinamicForm } from '../scenes/DinamicForm/DinamicForm_Reducer';
 import { reducer as fieldArrayForm } from '../scenes/FieldArrayForm/FieldArrayForm_Reducer';
 import { reducer as loadFromState } from '../scenes/LoadFromState/LoadFromState_Reducer';
+import { reducer as wizardFormValues } from '../scenes/WizardForm/WizardForm_Reducer';
 
 const rootReducer = combineReducers({
   form: formReducer,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   dinamicForm,
   fieldArrayForm,
   loadFromState,
+  wizardFormValues,
 });
 
 export default rootReducer;

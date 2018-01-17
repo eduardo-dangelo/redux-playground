@@ -10,7 +10,7 @@ import './FieldArrayForm_Style.scss';
 
 class FieldArrayForm extends Component {
   submit = (formValues) => {
-    console.log('submit', formValues);
+
     const { submitForm, reset, dispatch } = this.props;
     submitForm(formValues);
     dispatch(reset('fieldArrayForm'));
@@ -35,18 +35,17 @@ class FieldArrayForm extends Component {
           <div className="form-container">
             <h4>Result</h4>
             {map(formValues.user, (item, key) => {
-            return (
-              <div key={key} className="user-section">
-                <h4>User {key + 1}</h4>
-                <p><strong>Name:</strong> {item.name}</p>
-                {item.hobbies && (
-                  map(item.hobbies, (hobby, key) => {
-                    return <p key={key}><strong>Hobby {key + 1}:</strong> {hobby}</p>
-                  })
-                )}
-              </div>
-              )
-            })}
+              return (
+                <div key={key} className="user-section">
+                  <h4>User {key + 1}</h4>
+                  <p><strong>Name:</strong> {item.name}</p>
+                  {item.hobbies && (
+                    map(item.hobbies, (hobby, key) => {
+                      return <p key={key}><strong>Hobby {key + 1}:</strong> {hobby}</p>
+                    })
+                  )}
+                </div>
+              )})}
           </div>
         )}
       </Form>
