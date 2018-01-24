@@ -7,6 +7,7 @@ import DinamicForm from './scenes/DinamicForm/DinamicForm';
 import FieldArrayForm from './scenes/FieldArrayForm/FieldArrayForm';
 import LoadFromState from './scenes/LoadFromState/LoadFromState';
 import WizardForm from './scenes/WizardForm/WizardForm';
+import MixedThechniqueForm from './scenes/MixedThechniqueForm';
 import './App.scss';
 
 class App extends Component {
@@ -16,7 +17,7 @@ class App extends Component {
         <header className="App-header">
           <h2>Redux Playground</h2>
         </header>
-        <Tabs defaultActiveKey={7} id="uncontrolled-tab-example">
+        <Tabs defaultActiveKey={8} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Switch Content">
             <ItemList />
           </Tab>
@@ -37,6 +38,9 @@ class App extends Component {
           </Tab>
           <Tab eventKey={7} title="Wizard Form">
             <WizardForm />
+          </Tab>
+          <Tab eventKey={8} title="Wizard Form">
+            <MixedThechniqueForm />
           </Tab>
         </Tabs>
       </div>
