@@ -7,7 +7,7 @@ import DinamicForm from './scenes/DinamicForm/DinamicForm';
 import FieldArrayForm from './scenes/FieldArrayForm/FieldArrayForm';
 import LoadFromState from './scenes/LoadFromState/LoadFromState';
 import WizardForm from './scenes/WizardForm/WizardForm';
-import MixedThechniqueForm from './scenes/MixedThechniqueForm';
+import MixedTechniqueForm from './scenes/MixedTechniqueForm';
 import './App.scss';
 
 class App extends Component {
@@ -40,7 +40,7 @@ class App extends Component {
             <WizardForm />
           </Tab>
           <Tab eventKey={8} title="Wizard Form">
-            <MixedThechniqueForm />
+            <MixedTechniqueForm />
           </Tab>
         </Tabs>
       </div>
