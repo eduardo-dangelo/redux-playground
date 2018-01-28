@@ -18,7 +18,6 @@ class FieldArrayForm extends Component {
 
   render() {
     const { handleSubmit, formValues } = this.props;
-    console.log('formValues', formValues);
  
     return (
       <Form onSubmit={handleSubmit(this.submit)}>

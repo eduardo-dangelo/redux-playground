@@ -2,13 +2,24 @@ import React, { Component } from 'react';
 import { Form, Field, reduxForm } from 'redux-form';
 import { FormGroup, ControlLabel, Button } from 'react-bootstrap';
 import FieldControl from '../../../../components/FieldControl/FieldControl';
+import { actions } from '../../reducer';
+import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { flow } from 'lodash';
 
 class CreateUserForm extends Component {
+  submitForm = (formValues) => {
+    const { dispatch, reset, actions } = this.props;
+    actions.submitForm(formValues);
+    dispatch(reset('create-user-form'));
+  }
+
   render() {
     const { handleSubmit } = this.props;
+    console.log(this.props)
 
     return (
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit(this.submitForm)}>
       <h2>Create User</h2>
         <div className="form-container">
           <FormGroup controlId="first-name">
@@ -66,8 +77,18 @@ class CreateUserForm extends Component {
   }
 }
 
-export default reduxForm({
-  form: 'create-user-form',
-  destroyOnUnmount: false,
-  forceUnregisterOnUnmount: true,
-})(CreateUserForm);
+export default flow([
+  reduxForm({
+    form: 'create-user-form',
+    destroyOnUnmount: false,
+    forceUnregisterOnUnmount: true,
+  }),
+  connect(
+    (state) => ({
+      mixedTechniqueForm: state.mixedTechniqueForm,
+    }),
+    (dispatch) => ({
+      actions: bindActionCreators(actions, dispatch),
+    }),
+  ),
+])(CreateUserForm);

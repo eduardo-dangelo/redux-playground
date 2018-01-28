@@ -5,15 +5,8 @@ import UserList from './components/UserList';
 import UserDetails from './components/UserDetails';
 import { flow } from 'lodash';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { actions } from './reducer';
 
 class MixedTechniqueForm extends Component {
-  handleSubmit = (formValues) => {
-    const { actions } = this.props;
-    actions.submitForm(formValues);
-  }
-
   render() {
     console.log(this.props);
     const { mixedTechniqueForm } = this.props;
@@ -24,7 +17,7 @@ class MixedTechniqueForm extends Component {
         <h2>Mixed Technique Form</h2>
         <Row>
           <Col sm={4}>
-            <CreateUserForm onSubmit={this.handleSubmit} />
+            <CreateUserForm />
           </Col>
           <Col sm={4}>
             <UserList formValues={mixedTechniqueForm} />
@@ -42,9 +35,6 @@ export default flow([
   connect(
     (state) => ({
       mixedTechniqueForm: state.mixedTechniqueForm,
-    }),
-    (dispatch) => ({
-      actions: bindActionCreators(actions, dispatch),
     }),
   ),
 ])(MixedTechniqueForm);

@@ -18,7 +18,7 @@ export function reducer(state = initialState, action) {
     case SUBMIT_FORM:
       return {
         ...state,
-        user: [
+        users: [
           ...state.users,
           action.payload,
         ],
@@ -32,10 +32,7 @@ export function reducer(state = initialState, action) {
       return state;
   }
 }
-
-const submitForm = (formValues) => {
-  console.log(formValues);
-};
+const submitForm = (formValues) => ({ type: SUBMIT_FORM, payload: formValues });
 
 const selectUser = (user) => ({ type: SELECT_USER, payload: user });
 
