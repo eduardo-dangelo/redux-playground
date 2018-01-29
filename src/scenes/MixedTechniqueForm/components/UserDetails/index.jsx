@@ -4,7 +4,7 @@ class UserDetails extends Component {
   render() {
     const { user } = this.props;
 
-    if (!user) {
+    if (!user.firstName) {
       return (
         <div>
           <h2>User Details</h2>

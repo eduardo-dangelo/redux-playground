@@ -15,9 +15,23 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h2>Redux Playground</h2>
+          <h1>Redux & Redux-Form Playground</h1>
         </header>
-        <Tabs defaultActiveKey={8} id="uncontrolled-tab-example">
+        {/*<div className="menu">*/}
+          {/*<div className="menu-item">*/}
+            {/*Switch Content*/}
+          {/*</div>*/}
+          {/*<div className="menu-item">*/}
+            {/*Switch Content*/}
+          {/*</div>*/}
+          {/*<div className="menu-item">*/}
+            {/*Switch Content*/}
+          {/*</div>*/}
+          {/*<div className="menu-item">*/}
+            {/*Switch Content*/}
+          {/*</div>*/}
+        {/*</div>*/}
+        <Tabs defaultActiveKey={8} id="nav-tab">
           <Tab eventKey={1} title="Switch Content">
             <ItemList />
           </Tab>
