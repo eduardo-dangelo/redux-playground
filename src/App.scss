@@ -1,49 +1,44 @@
+/*--------------
+GLOBAL
+ ------------*/
+
 .App {
   text-align: center;
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+/*--------------
+HEADER
+ ------------*/
 
 .App-header {
   background: #222;
   padding: 45px 0;
-  height: 300px;
-  color: white;
-  display: flex;
-  align-items: center;
+  height: 200px;
+  color: #aaaaaa;
   text-align: center;
+  //display: flex;
+  //align-items: center;
+  //flex-wrap: wrap;
 
   h1 {
-    margin: auto;
+    margin: 30px auto;
+    //border: 1px solid orange;
     text-shadow: 0 4px 8px #000;
   }
-}
 
-.menu {
-  border: 1px solid orange;
-  position: absolute;
-  width: 100%;
-  margin: auto;
-  height: 60px;
-  z-index: 4;
-
-  .menu-item {
-    background: #fff;
-    width: 150px;
-    height: 100px;
-    border-radius: 3px;
-    padding: 30px;
-    box-shadow: 0 4px 6px #000;
-    margin: 5px;
-    float: left;
-    position: relative;
-    top: -50px;
+  .burger-menu-btn {
+    margin: auto;
+    background: none;
+    color: #aaaaaa;
   }
+
 }
+
+
+/*--------------
+MAIN MENU
+ ------------*/
 
 .nav-tabs {
   margin: auto;
@@ -56,6 +51,8 @@
     top: -80px;
     font-size: 16px;
     font-weight: bold;
+    opacity: 1;
+    animation: menuFadeIn .5s ease-out 1;
 
     a {
       border: #222222 1px solid;
@@ -87,10 +84,6 @@
           opacity: 0;
         }
       }
-
-      &:active {
-        //top: 1px;
-      }
     }
   }
 
@@ -103,7 +96,50 @@
   }
 }
 
+.hide-menu {
+
+  li {
+    display: none;
+  }
+}
+
+
+/*--------------
+INTERNAL PAGE
+ ------------*/
+
+.internal-page {
+  animation: pageFadeIn .5s ease-in 1;
+
+  .page-container {
+    position: relative;
+    margin: auto;
+    top: 0;
+    animation: contentFadeIn .5s ease-out 1;
+  }
+}
+
+
+/*--------------
+ANIMATIONS
+ ------------*/
+
 @keyframes slide-right {
   from { width: 0; opacity: 1; }
   to { width: 100%; opacity: 0; }
+}
+
+@keyframes menuFadeIn {
+  from { opacity: 0; top: 0;}
+  to { opacity: 1; top: -80px;}
+}
+
+@keyframes contentFadeIn {
+  from { opacity: 0; top: 40px;}
+  to { opacity: 1; top: 0;}
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
