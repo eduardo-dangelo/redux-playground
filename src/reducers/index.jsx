@@ -9,6 +9,7 @@ import { reducer as fieldArrayForm } from '../scenes/FieldArrayForm/FieldArrayFo
 import { reducer as loadFromState } from '../scenes/LoadFromState/LoadFromState_Reducer';
 import { reducer as wizardFormValues } from '../scenes/WizardForm/WizardForm_Reducer';
 import { reducer as  mixedTechniqueForm } from '../scenes/MixedTechniqueForm/reducer';
+import { reducer as switchContent } from '../scenes/SwitchContent/reducer';
 
 const rootReducer = combineReducers({
   form: formReducer,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   loadFromState,
   wizardFormValues,
   mixedTechniqueForm,
+  switchContent,
 });
 
 export default rootReducer;

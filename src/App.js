@@ -8,6 +8,7 @@ import FieldArrayForm from './scenes/FieldArrayForm/FieldArrayForm';
 import LoadFromState from './scenes/LoadFromState/LoadFromState';
 import WizardForm from './scenes/WizardForm/WizardForm';
 import MixedTechniqueForm from './scenes/MixedTechniqueForm';
+import SwitchContent from './scenes/SwitchContent';
 import FaBars from 'react-icons/lib/fa/bars';
 import './App.scss';
 
@@ -55,7 +56,8 @@ class App extends Component {
             className="internal-page"
           >
             <div className="page-container">
-              <ItemList />
+              <SwitchContent/>
+              {/*<ItemList />*/}
             </div>
           </Tab>
           <Tab
