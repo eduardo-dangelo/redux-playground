@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
-import ItemList from '../scenes/ItemList/ItemList_Reducer';
-import ItemSelected from '../scenes/ItemList/ItemSelected_Reducer';
-import { reducer as states } from '../scenes/BooleanState/BooleanState_Reducer';
 import { reducer as formReducer } from 'redux-form';
+import { reducer as states } from '../scenes/BooleanState/BooleanState_Reducer';
 import { reducer as formValues } from '../scenes/BasicForm/BasicForm_Reducer';
 import { reducer as dinamicForm } from '../scenes/DinamicForm/DinamicForm_Reducer';
 import { reducer as fieldArrayForm } from '../scenes/FieldArrayForm/FieldArrayForm_Reducer';
@@ -13,8 +11,7 @@ import { reducer as switchContent } from '../scenes/SwitchContent/reducer';
 
 const rootReducer = combineReducers({
   form: formReducer,
-  itens: ItemList,
-  itemSelected: ItemSelected,
+  switchContent,
   states: states,
   formValues,
   dinamicForm,
@@ -22,7 +19,6 @@ const rootReducer = combineReducers({
   loadFromState,
   wizardFormValues,
   mixedTechniqueForm,
-  switchContent,
 });
 
 export default rootReducer;

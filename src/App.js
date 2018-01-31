@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Tabs, Tab, Button } from 'react-bootstrap';
-import ItemList from './scenes/ItemList/ItemList';
 import BooleanState from './scenes/BooleanState/BooleanState';
 import BasicForm from './scenes/BasicForm/BasicForm';
 import DinamicForm from './scenes/DinamicForm/DinamicForm';
