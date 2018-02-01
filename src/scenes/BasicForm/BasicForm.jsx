@@ -12,7 +12,7 @@ class BasicReduxForm extends Component {
   submit = (formValues) => {
     const { submitForm, dispatch, reset } = this.props;
     submitForm(formValues);
-    dispatch(reset('dinamicForm'));
+    dispatch(reset('basicForm'));
   }
 
   render() {
@@ -49,18 +49,18 @@ class BasicReduxForm extends Component {
             />
           </FormGroup>
           <FormGroup controlId="radio">
-            <ControlLabel>Random Question:</ControlLabel>
+            <ControlLabel>Gender:</ControlLabel>
             <Field
-              name="radio"
-              value="yes"
-              displayName="Yes"
+              name="gender"
+              value="male"
+              displayName="male"
               type="radio"
               component={FieldControl}
             />
             <Field
-              name="radio"
-              value="no"
-              displayName="No"
+              name="gender"
+              value="female"
+              displayName="female"
               type="radio"
               component={FieldControl}
             />
@@ -123,6 +123,6 @@ function mapDispatchToProps(dispatch) {
 BasicReduxForm = connect(mapStateToProps, mapDispatchToProps)(BasicReduxForm);
 
 export default reduxForm({
-  form: 'basicReduxForm',
+  form: 'basicForm',
   validate,
 })(BasicReduxForm)

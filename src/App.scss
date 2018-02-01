@@ -147,7 +147,7 @@ ANIMATIONS
  ------------*/
 
 @keyframes slide-right {
-  from { width: 0; opacity: 1; }
+  from { width: 0; opacity: .5; }
   to { width: 100%; opacity: 0; }
 }
 

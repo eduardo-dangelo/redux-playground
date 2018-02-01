@@ -1,9 +1,10 @@
 
 .form-container {
-  border: 1px solid #bbbbbb;
-  max-width: 480px;
-  padding: 15px;
-  margin: 30px auto;
+  max-width: 500px;
+  margin: 15px auto;
+  border: 1px solid #dddddd;
   text-align: left;
-  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 15px;
 }

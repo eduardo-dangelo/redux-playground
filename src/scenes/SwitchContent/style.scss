@@ -8,6 +8,13 @@
 
   .list-group {
     margin-bottom: 0;
+
+    //.list-group-item {
+    //
+    //  &:active, &:focus {
+    //    background: #5bc0de;
+    //  }
+    //}
   }
 
   .panel {
@@ -30,6 +37,14 @@
 
     .content {
       padding: 15px;
+    }
+  }
+
+  @media all and (max-width: 640px) {
+    margin: 15px;
+
+    .list-group {
+      margin-bottom: 15px;
     }
   }
 }
