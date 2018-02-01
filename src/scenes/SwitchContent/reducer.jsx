@@ -14,6 +14,14 @@ const initialState = {
       title: 'some title 03',
       info: 'some info here again',
     },
+    {
+      title: 'some title 04',
+      info: 'some info here again',
+    },
+    {
+      title: 'some title 05',
+      info: 'some info here again',
+    },
   ],
 };
 

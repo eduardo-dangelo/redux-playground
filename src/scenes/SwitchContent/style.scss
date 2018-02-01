@@ -1,7 +1,35 @@
 .switch-content-container {
   max-width: 600px;
   margin: 15px auto;
-  border: 1px solid #aaaaaa;
-  border-radius: 3px;
+  border: 1px solid #dddddd;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  border-radius: 5px;
   padding: 15px;
+
+  .list-group {
+    margin-bottom: 0;
+  }
+
+  .panel {
+    margin-bottom: 0;
+  }
+
+  .panel-body {
+    padding: 0;
+    height: 206px;
+
+    .title {
+      padding: 15px;
+      background: #efefef;
+      border-bottom: 1px solid #dddddd;
+
+      h4 {
+        margin: 0 auto;
+      }
+    }
+
+    .content {
+      padding: 15px;
+    }
+  }
 }

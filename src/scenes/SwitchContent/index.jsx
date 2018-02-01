@@ -39,7 +39,12 @@ class SwitchContent extends Component {
       return (
         <div>
           <Panel>
-            Please select an item.
+            <div className="title">
+              <h4>Please select an item</h4>
+            </div>
+            <div className="content">
+              <p>No item selected...</p>
+            </div>
           </Panel>
         </div>
       );
@@ -49,8 +54,12 @@ class SwitchContent extends Component {
       return (
         <div>
           <Panel>
-            {itemSelected.title}
-            {itemSelected.info}
+            <div className="title">
+              <h4>{itemSelected.title}</h4>
+            </div>
+            <div className="content">
+              <p>{itemSelected.info}</p>
+            </div>
           </Panel>
         </div>
       );
@@ -60,7 +69,7 @@ class SwitchContent extends Component {
   render() {
     return (
       <div>
-        <h2>Switch Content</h2>
+        <h1>Switch Content</h1>
         <div className="switch-content-container">
           <Row>
             <Col sm={4}>

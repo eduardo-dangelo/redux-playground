@@ -4,7 +4,7 @@ GLOBAL
 
 .App {
   text-align: center;
-  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  //font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 }
 
 /*--------------
@@ -14,9 +14,15 @@ HEADER
 .App-header {
   background: #222;
   padding: 45px 0;
-  height: 200px;
+  height: 220px;
   color: #aaaaaa;
   text-align: center;
+  border-bottom: 1px solid #aaaaaa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+
+  @media all and (max-width: 540px) {
+    height: 250px;
+  }
 
   h1 {
     margin: 30px auto;
@@ -38,7 +44,8 @@ MAIN MENU
 
 .nav-tabs {
   margin: auto;
-  width: 900px;
+  max-width: 900px;
+  border: none;
 
   li {
     width: 25%;
@@ -48,7 +55,7 @@ MAIN MENU
     font-size: 16px;
     font-weight: bold;
     opacity: 1;
-    animation: menuFadeIn .5s ease-out 1;
+    animation: menuFadeIn .6s ease-out;
 
     a {
       border: #aaaaaa 1px solid;
@@ -57,15 +64,17 @@ MAIN MENU
       background: #fff;
       align-items: center;
       text-align: center;
-      transition: .5s ease;
+      transition: .3s ease;
       position: relative;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4);
       font-size: 20px;
+      color: #aaaaaa;
 
       &:hover {
-        box-shadow: 0 4px 16px rgba(0,0,0,0.7);
-        background: #004466;
-        border: #222222 1px solid;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        top: 0px;
+        background: #efefef;
+        border: #aaaaaa 1px solid;
 
         &:after {
           content: '';
@@ -80,6 +89,18 @@ MAIN MENU
           opacity: 0;
         }
       }
+
+      @media all and (max-width: 464px) {
+        height: 60px;
+      }
+    }
+
+    @media all and (max-width: 922px) {
+      width: 50%;
+    }
+
+    @media all and (max-width: 464px) {
+      width: 100%;
     }
   }
 
@@ -89,6 +110,10 @@ MAIN MENU
       box-shadow: 0 2px 16px #000;
       background: #004466 !important;
     }
+  }
+
+  @media all and (max-width: 922px) {
+    margin: 15px;
   }
 }
 
@@ -106,6 +131,7 @@ INTERNAL PAGE
 
 .internal-page {
   animation: pageFadeIn .5s ease-in 1;
+  color: #777777;
 
   .page-container {
     position: relative;
