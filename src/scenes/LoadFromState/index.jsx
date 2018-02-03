@@ -30,7 +30,7 @@ class LoadFromState extends React.Component {
 
     return (
       <Form onSubmit={handleSubmit}>
-        <h2>Load from State</h2>
+        <h1>Load from State</h1>
         <div className="form-container">
           <FormGroup controlId="name">
             <ControlLabel>Name:</ControlLabel>

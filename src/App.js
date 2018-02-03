@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Tabs, Tab, Button } from 'react-bootstrap';
 import BooleanState from './scenes/BooleanState/index';
 import BasicForm from './scenes/BasicForm/index';
-import DinamicForm from './scenes/DynamicForm/index';
+import DynamicForm from './scenes/DynamicForm/index';
 import FieldArrayForm from './scenes/FieldArrayForm/index';
 import LoadFromState from './scenes/LoadFromState/index';
 import WizardForm from './scenes/WizardForm/index';
@@ -78,16 +78,16 @@ class App extends Component {
             </div>
           </Tab>
           <Tab
-            title="Dinamic Form"
+            title="Dynamic Form"
             eventKey={4}
             className="internal-page"
           >
             <div className="page-container">
-              <DinamicForm />
+              <DynamicForm />
             </div>
           </Tab>
           <Tab
-            title="Field Array"
+            title="Field Array Form"
             eventKey={5}
             className="internal-page"
           >

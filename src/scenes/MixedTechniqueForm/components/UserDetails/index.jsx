@@ -7,7 +7,7 @@ class UserDetails extends Component {
     if (!user.firstName) {
       return (
         <div>
-          <h2>User Details</h2>
+          <h3>User Details</h3>
           <div className="form-container">
             No User Selected
           </div>
@@ -17,7 +17,7 @@ class UserDetails extends Component {
 
     return (
       <div>
-        <h2>User Details</h2>
+        <h3>User Details</h3>
         <div className="form-container">
           <p>Name: {user.firstName} {user.lastName}</p>
           <p>Email: {user.email}</p>

@@ -19,7 +19,7 @@ class CreateUserForm extends Component {
 
     return (
       <Form onSubmit={handleSubmit(this.submitForm)}>
-      <h2>Create User</h2>
+      <h3>Create User</h3>
         <div className="form-container">
           <FormGroup controlId="first-name">
             <ControlLabel>First Name:</ControlLabel>

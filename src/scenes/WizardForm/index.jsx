@@ -42,7 +42,7 @@ class WizardForm extends Component {
 
     return (
       <div>
-        <h2>Wizard Form</h2>
+        <h1>Wizard Form</h1>
         <WizardNavigation
           step={wizardFormValues.step}
           onClickStep1={() => this.handleWizardNavigation(1)}

@@ -3,24 +3,24 @@ const SELECT_ITEM = 'switchContent/SELECT_ITEM';
 const initialState = {
   itemList: [
     {
-      title: 'some title 01',
-      info: 'some info here',
+      title: 'Example 01',
+      info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac aliquet elit. Phasellus magna velit, interdum et velit vitae, gravida tristique enim.',
     },
     {
-      title: 'some title 02',
-      info: 'some info here too',
+      title: 'Example 02',
+      info: 'Maecenas ullamcorper lectus id velit bibendum, non dapibus sapien tempus. Donec quis tincidunt metus. Aliquam consectetur enim odio, at interdum arcu blandit sed. Vestibulum et sem felis. Praesent non ex id nunc laoreet molestie. Nunc dictum nibh id maximus luctus. ',
     },
     {
-      title: 'some title 03',
-      info: 'some info here again',
+      title: 'Example 03',
+      info: 'Morbi sed dignissim metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus',
     },
     {
-      title: 'some title 04',
-      info: 'some info here again',
+      title: 'Example 04',
+      info: 'Suspendisse at dictum turpis, sed tristique ex. Maecenas a ullamcorper urna. Suspendisse potenti. Morbi eu viverra ante, quis congue elit. Mauris quis feugiat nulla. Quisque dignissim sed elit sit amet egestas. Quisque sit amet maximus purus, ac venenatis ligula.',
     },
     {
-      title: 'some title 05',
-      info: 'some info here again',
+      title: 'Example 05',
+      info: 'Sed et felis ipsum. Donec vitae ultrices purus. In quam metus, fringilla at aliquam vitae, rhoncus dictum diam. Cras ac nisi libero. Mauris non rutrum enim, non placerat eros. Suspendisse luctus nulla ac mollis auctor.',
     },
   ],
 };

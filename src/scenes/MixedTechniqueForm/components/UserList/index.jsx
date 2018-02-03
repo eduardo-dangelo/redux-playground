@@ -29,7 +29,7 @@ class UserList extends Component {
 
     return (
       <div>
-        <h2>User List</h2>
+        <h3>User List</h3>
         {this.renderUserList(formValues.users)}
       </div>
     );

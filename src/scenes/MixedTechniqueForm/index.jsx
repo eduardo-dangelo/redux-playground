@@ -14,18 +14,20 @@ class MixedTechniqueForm extends Component {
 
     return (
       <div>
-        <h2>Mixed Technique Form</h2>
-        <Row>
-          <Col sm={4}>
-            <CreateUserForm />
-          </Col>
-          <Col sm={4}>
-            <UserList formValues={mixedTechniqueForm} />
-          </Col>
-          <Col sm={4}>
-            <UserDetails user={userSelected} />
-          </Col>
-        </Row>
+        <h1>Mixed Technique Form</h1>
+        <div className="container">
+          <Row>
+            <Col sm={4}>
+              <CreateUserForm />
+            </Col>
+            <Col sm={4}>
+              <UserList formValues={mixedTechniqueForm} />
+            </Col>
+            <Col sm={4}>
+              <UserDetails user={userSelected} />
+            </Col>
+          </Row>
+        </div>
       </div>
     );
   }

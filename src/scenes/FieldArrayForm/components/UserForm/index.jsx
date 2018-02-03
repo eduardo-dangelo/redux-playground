@@ -45,7 +45,9 @@ class UserForm  extends React.Component {
             Remove All
           </Button>
         </div>
-        <h3>Users</h3>
+        {fields.length > 0 && (
+          <h3>Users</h3>
+        )}
         {map(fields, ((item, key) => {
           return (
             <div key={key}>
@@ -58,10 +60,10 @@ class UserForm  extends React.Component {
                     component={FieldControl}
                   />
                 </FormGroup>
-                  <FieldArray
-                    name={`user[${key}].hobbies`}
-                    component={Hobby}
-                  />
+                <FieldArray
+                  name={`user[${key}].hobbies`}
+                  component={Hobby}
+                />
               </div>
               <Button
                 bsStyle="default"
