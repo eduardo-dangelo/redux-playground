@@ -11,12 +11,11 @@ class CreateUserForm extends Component {
   submitForm = (formValues) => {
     const { dispatch, reset, actions } = this.props;
     actions.submitForm(formValues);
-    dispatch(reset('create-user-form'));
+    dispatch(reset('createUserForm'));
   }
 
   render() {
     const { handleSubmit } = this.props;
-    console.log(this.props)
 
     return (
       <Form onSubmit={handleSubmit(this.submitForm)}>
@@ -79,7 +78,7 @@ class CreateUserForm extends Component {
 
 export default flow([
   reduxForm({
-    form: 'create-user-form',
+    form: 'createUserForm',
     destroyOnUnmount: false,
     forceUnregisterOnUnmount: true,
   }),

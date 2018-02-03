@@ -23,17 +23,19 @@ export function reducer(state = initialState, action) {
           action.payload,
         ],
       };
+
     case SELECT_USER:
       return {
         ...state,
         userSelected: action.payload,
       };
+
     default:
       return state;
   }
 }
-const submitForm = (formValues) => ({ type: SUBMIT_FORM, payload: formValues });
 
+const submitForm = (formValues) => ({ type: SUBMIT_FORM, payload: formValues });
 const selectUser = (user) => ({ type: SELECT_USER, payload: user });
 
 export const actions = {

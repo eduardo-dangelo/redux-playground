@@ -5,7 +5,7 @@ import BasicForm from './scenes/BasicForm/index';
 import DinamicForm from './scenes/DynamicForm/index';
 import FieldArrayForm from './scenes/FieldArrayForm/index';
 import LoadFromState from './scenes/LoadFromState/index';
-import WizardForm from './scenes/WizardForm/WizardForm';
+import WizardForm from './scenes/WizardForm/index';
 import MixedTechniqueForm from './scenes/MixedTechniqueForm';
 import SwitchContent from './scenes/SwitchContent';
 import FaBars from 'react-icons/lib/fa/bars';

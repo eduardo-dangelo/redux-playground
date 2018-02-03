@@ -26,7 +26,6 @@ class UserList extends Component {
 
   render() {
     const { formValues } = this.props;
-    console.log('formvalues user list', formValues)
 
     return (
       <div>

@@ -5,7 +5,7 @@ import { reducer as basicForm } from '../scenes/BasicForm/reducer';
 import { reducer as dynamicForm } from '../scenes/DynamicForm/reducer';
 import { reducer as fieldArrayForm } from '../scenes/FieldArrayForm/reducer';
 import { reducer as loadFromState } from '../scenes/LoadFromState/reducer';
-import { reducer as wizardFormValues } from '../scenes/WizardForm/WizardForm_Reducer';
+import { reducer as wizardForm } from '../scenes/WizardForm/reducer';
 import { reducer as mixedTechniqueForm } from '../scenes/MixedTechniqueForm/reducer';
 import { reducer as switchContent } from '../scenes/SwitchContent/reducer';
 
@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   dynamicForm,
   fieldArrayForm,
   loadFromState,
-  wizardFormValues,
+  wizardForm,
   mixedTechniqueForm,
 });
 
