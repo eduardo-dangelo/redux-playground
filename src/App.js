@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Tabs, Tab, Button } from 'react-bootstrap';
 import BooleanState from './scenes/BooleanState/index';
 import BasicForm from './scenes/BasicForm/index';
-import DinamicForm from './scenes/DinamicForm/DinamicForm';
+import DinamicForm from './scenes/DynamicForm/index';
 import FieldArrayForm from './scenes/FieldArrayForm/FieldArrayForm';
 import LoadFromState from './scenes/LoadFromState/LoadFromState';
 import WizardForm from './scenes/WizardForm/WizardForm';

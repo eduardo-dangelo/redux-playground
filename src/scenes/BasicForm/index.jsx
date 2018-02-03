@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, FormGroup, ControlLabel } from 'react-bootstrap';
-import { map } from 'lodash';
+import { map, flow } from 'lodash';
 import { reduxForm, Form, Field } from 'redux-form';
 import FieldControl from '../../components/FieldControl/FieldControl';
 import { bindActionCreators } from 'redux';
@@ -8,18 +8,18 @@ import { connect } from 'react-redux';
 import { actions } from './reducer';
 import './style.scss';
 
-class BasicReduxForm extends Component {
-  submit = (formValues) => {
-    const { submitForm, dispatch, reset } = this.props;
-    submitForm(formValues);
+class BasicForm extends Component {
+  submitForm = (formValues) => {
+    const { actions, dispatch, reset } = this.props;
+    actions.submitForm(formValues);
     dispatch(reset('basicForm'));
   }
 
   render() {
-    const { handleSubmit, reset, formValues } = this.props;
+    const { handleSubmit, reset, basicFormValues } = this.props;
 
     return (
-      <Form onSubmit={handleSubmit(this.submit)}>
+      <Form onSubmit={handleSubmit(this.submitForm)}>
         <h1>Basic Form</h1>
         <div className="form-container">
           <FormGroup controlId="first-name">
@@ -79,11 +79,13 @@ class BasicReduxForm extends Component {
             Clear Values
           </Button>
         </div>
-        {formValues && (
+        {basicFormValues && (
           <div className="form-container">
             <h4>Result</h4>
-            {map(formValues, (item, key) => {
-              return (<p key={key}><strong>{key}</strong>{' '}{item}</p>);
+            {map(basicFormValues, (item, key) => {
+              return (
+                <p key={key}><strong>{key}:</strong>{' '}{item}</p>
+              );
             })}
           </div>
         )}
@@ -108,21 +110,19 @@ const validate = values => {
     errors.radio = 'radio is required';
   }
   return errors;
-}
+};
 
-function mapStateToProps(state) {
-  return {
-    formValues: state.formValues,
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ ...actions }, dispatch);
-}
-
-BasicReduxForm = connect(mapStateToProps, mapDispatchToProps)(BasicReduxForm);
-
-export default reduxForm({
-  form: 'basicForm',
-  validate,
-})(BasicReduxForm)
+export default flow(
+  reduxForm({
+    form: 'basicForm',
+    validate,
+  }),
+  connect(
+    (state) => ({
+      basicFormValues: state.basicForm,
+    }),
+    (dispatch) => ({
+      actions: bindActionCreators(actions, dispatch),
+    }),
+  ),
+)(BasicForm);

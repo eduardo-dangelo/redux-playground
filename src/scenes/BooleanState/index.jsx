@@ -6,24 +6,24 @@ import { connect } from 'react-redux';
 
 class BooleanState extends Component {
   render() {
-    const { states, actions } = this.props;
+    const { booleanStates, actions } = this.props;
 
     const pageContent = [
       {
         name: 'item 1',
-        prop: states.item1,
+        prop: booleanStates.item1,
         action1: actions.setItemOneTrue,
         action2: actions.setItemOneFalse,
       },
       {
         name: 'item 2',
-        prop: states.item2,
+        prop: booleanStates.item2,
         action1: actions.setItemTwoTrue,
         action2: actions.setItemTwoFalse,
       },
       {
         name: 'item 3',
-        prop: states.item3,
+        prop: booleanStates.item3,
         action1: actions.setItemThreeTrue,
         action2: actions.setItemThreeFalse,
       },
@@ -80,7 +80,7 @@ class BooleanState extends Component {
 export default connect(
   (state) => {
     return {
-      states: state.states,
+      booleanStates: state.booleanStates,
     }
   },
   (dispatch) => ({
