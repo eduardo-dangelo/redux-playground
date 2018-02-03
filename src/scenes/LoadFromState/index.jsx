@@ -5,7 +5,7 @@ import { FormGroup, ControlLabel, Button } from 'react-bootstrap';
 import { actions } from './reducer';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { map } from 'lodash';
+import { map, flow } from 'lodash';
 
 
 class LoadFromState extends React.Component {
@@ -20,9 +20,9 @@ class LoadFromState extends React.Component {
   }
 
   handleLoadUserClick = (user) => () => {
-    const { loadUser } = this.props;
+    const { actions } = this.props;
 
-    loadUser(user);
+    actions.loadUser(user);
   }
 
   render () {
@@ -70,18 +70,16 @@ class LoadFromState extends React.Component {
   }
 }
 
-LoadFromState = reduxForm({
-  form: 'loadFromStateForm'
-})(LoadFromState);
-
-function mapStateToProps(state) {
-  return { loadFromState: state.loadFromState }
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({...actions}, dispatch);
-}
-
-LoadFromState = connect(mapStateToProps, mapDispatchToProps)(LoadFromState);
-
-export default LoadFromState;
+export default flow(
+  reduxForm({
+    form: 'loadFromStateForm'
+  }),
+  connect(
+    (state) => ({
+      loadFromState: state.loadFromState,
+    }),
+    (dispatch) => ({
+      actions: bindActionCreators(actions, dispatch),
+    }),
+  ),
+)(LoadFromState);
