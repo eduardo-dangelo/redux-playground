@@ -1,52 +1,42 @@
 import React, { Component } from 'react';
-import { actions } from './BooleanState_Reducer';
+import { actions } from './reducer';
 import { ButtonGroup, Button } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-class UpdateStates extends Component {
+class BooleanState extends Component {
   render() {
-    const { 
-      states,
-      selectItem1,
-      unselectItem1,
-      selectItem2,
-      unselectItem2,
-      selectItem3,
-      unselectItem3,
-      selectAll,
-      unselectAll, 
-    } = this.props;
+    const { states, actions } = this.props;
 
-    const data = [
+    const pageContent = [
       {
         name: 'item 1',
         prop: states.item1,
-        action1: selectItem1,
-        action2: unselectItem1
+        action1: actions.setItemOneTrue,
+        action2: actions.setItemOneFalse,
       },
       {
         name: 'item 2',
         prop: states.item2,
-        action1: selectItem2,
-        action2: unselectItem2
+        action1: actions.setItemTwoTrue,
+        action2: actions.setItemTwoFalse,
       },
       {
         name: 'item 3',
         prop: states.item3,
-        action1: selectItem3,
-        action2: unselectItem3
+        action1: actions.setItemThreeTrue,
+        action2: actions.setItemThreeFalse,
       },
     ];
 
     return (
       <div>
         <h1>Boolean States</h1>
-        {data.map((item, key) => {
+        {pageContent.map((item, key) => {
           return (
             <div key={key}>
               <img 
-                src={item.prop ? require('./switch_on.png') : require('./switch_off.png')}
+                src={item.prop ? require('./img/switch_on.png') : require('./img/switch_off.png')}
                 alt="switch"
                 onClick={() => {item.prop ? item.action2() : item.action1()}}
               />
@@ -71,13 +61,13 @@ class UpdateStates extends Component {
         <ButtonGroup>
           <Button
             bsStyle="default"
-            onClick={() => selectAll()}
+            onClick={() => actions.setAllItensTrue()}
           >
             SELECT ALL
           </Button>
           <Button
             bsStyle="default"
-            onClick={() => unselectAll()}
+            onClick={() => actions.setAllItensFalse()}
           >
             UNSELECT ALL
           </Button>
@@ -87,14 +77,13 @@ class UpdateStates extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    states: state.states
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({...actions}, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UpdateStates);
+export default connect(
+  (state) => {
+    return {
+      states: state.states,
+    }
+  },
+  (dispatch) => ({
+    actions: bindActionCreators(actions, dispatch),
+  }),
+)(BooleanState);

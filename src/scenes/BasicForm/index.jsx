@@ -5,8 +5,8 @@ import { reduxForm, Form, Field } from 'redux-form';
 import FieldControl from '../../components/FieldControl/FieldControl';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { actions } from './BasicForm_Reducer';
-import './BasicForm_Style.scss';
+import { actions } from './reducer';
+import './style.scss';
 
 class BasicReduxForm extends Component {
   submit = (formValues) => {
