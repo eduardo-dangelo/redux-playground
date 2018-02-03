@@ -34,8 +34,6 @@ class UserForm  extends React.Component {
 
   render() {
     const { fields } = this.props;
-    console.log('fields', fields);
- 
     return (
       <div>
         <h3>Config</h3>

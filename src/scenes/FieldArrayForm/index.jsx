@@ -4,23 +4,22 @@ import { Button } from 'react-bootstrap';
 import UserForm from './components/UserForm';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { actions } from './FieldArrayForm_Reducer';
-import { map } from 'lodash';
-import './FieldArrayForm_Style.scss';
+import { actions } from './reducer';
+import { map, flow } from 'lodash';
+import './style.scss';
 
 class FieldArrayForm extends Component {
-  submit = (formValues) => {
-
-    const { submitForm, reset, dispatch } = this.props;
-    submitForm(formValues);
+  submitForm = (formValues) => {
+    const { actions, reset, dispatch } = this.props;
+    actions.submitForm(formValues);
     dispatch(reset('fieldArrayForm'));
   }
 
   render() {
-    const { handleSubmit, formValues } = this.props;
+    const { handleSubmit, fieldArrayFormValues } = this.props;
  
     return (
-      <Form onSubmit={handleSubmit(this.submit)}>
+      <Form onSubmit={handleSubmit(this.submitForm)}>
         <h1>Field Array Form</h1>
         <FieldArray name="user" component={UserForm}/>
         <div>
@@ -30,10 +29,11 @@ class FieldArrayForm extends Component {
             </Button>
           </div>
         </div>
-        {formValues && (
+
+        {fieldArrayFormValues && (
           <div className="form-container">
             <h4>Result</h4>
-            {map(formValues.user, (item, key) => {
+            {map(fieldArrayFormValues.user, (item, key) => {
               return (
                 <div key={key} className="user-section">
                   <h4>User {key + 1}</h4>
@@ -52,20 +52,16 @@ class FieldArrayForm extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    formValues: state.fieldArrayForm,
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({...actions}, dispatch);
-}
-
-FieldArrayForm = connect(mapStateToProps, mapDispatchToProps)(FieldArrayForm);
-
-FieldArrayForm = reduxForm({
-  form: 'fieldArrayForm',
-})(FieldArrayForm);
-
-export default FieldArrayForm;
+export default flow(
+  reduxForm({
+    form: 'fieldArrayForm',
+  }),
+  connect(
+    (state) => ({
+      fieldArrayFormValues: state.fieldArrayForm,
+    }),
+    (dispatch) => ({
+      actions: bindActionCreators(actions, dispatch),
+    })
+  ),
+)(FieldArrayForm);

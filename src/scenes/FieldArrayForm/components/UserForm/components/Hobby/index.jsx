@@ -26,7 +26,6 @@ class Hobby extends React.Component {
 
   render () {
     const { fields } = this.props;
-
     return (
       <div>
         {fields.map((item, key) => {
