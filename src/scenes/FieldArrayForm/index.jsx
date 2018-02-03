@@ -44,7 +44,8 @@ class FieldArrayForm extends Component {
                     })
                   )}
                 </div>
-              )})}
+              )}
+            )}
           </div>
         )}
       </Form>

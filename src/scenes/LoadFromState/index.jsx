@@ -2,47 +2,31 @@ import React from 'react';
 import { Form, Field, reduxForm } from 'redux-form';
 import FieldControl from '../../components/FieldControl/FieldControl';
 import { FormGroup, ControlLabel, Button } from 'react-bootstrap';
-import { actions } from './LoadFromState_Reducer';
+import { actions } from './reducer';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { map } from 'lodash';
 
 
 class LoadFromState extends React.Component {
   componentWillReceiveProps(nextProps) {
     const { change } = this.props;
 
-    if (nextProps.loadUserAccount) {
-      change('name', nextProps.loadUserAccount.name);
-      change('dob', nextProps.loadUserAccount.dob);
-      change('email', nextProps.loadUserAccount.email);
+    if (nextProps.loadFromState) {
+      change('name', nextProps.loadFromState.application.name);
+      change('dob', nextProps.loadFromState.application.dob);
+      change('email', nextProps.loadFromState.application.email);
     }
   }
 
   handleLoadUserClick = (user) => () => {
     const { loadUser } = this.props;
+
     loadUser(user);
   }
 
   render () {
-    const { handleSubmit } = this.props;
-  
-    const users = {
-      carla: {
-        name: 'Carla',
-        dob: '10/08/1998',
-        email: 'carla@carla.com',
-      },
-      bruna: {
-        name: 'Bruna',
-        dob: '01/12/1999',
-        email: 'bruna@bruna.com',
-      },
-      marta: {
-        name: 'Marta',
-        dob: '16/02/2000',
-        email: 'marta@marta.com',
-      },
-    };
+    const { handleSubmit, loadFromState } = this.props;
 
     return (
       <Form onSubmit={handleSubmit}>
@@ -70,27 +54,17 @@ class LoadFromState extends React.Component {
             />
           </FormGroup>
         </div>
-        <div>
-          <h4>User 1</h4>
-          <p><strong>Name:</strong> Carla</p>
-          <p><strong>Date of birth</strong> 10/08/1998</p>
-          <p><strong>email</strong> bruna@bruna.com</p>
-          <Button onClick={this.handleLoadUserClick(users.carla)}>Load user</Button>  
-        </div>
-        <div>
-          <h4>User 2</h4>
-          <p><strong>Name:</strong> Bruna</p>
-          <p><strong>Date of birth</strong> 01/12/1999</p>
-          <p><strong>email</strong> carla@carla.com</p>
-          <Button onClick={this.handleLoadUserClick(users.bruna)}>Load user</Button>  
-        </div>
-        <div>
-          <h4>User 3</h4>
-          <p><strong>Name:</strong> Marta</p>
-          <p><strong>Date of birth</strong> 16/02/2000</p>
-          <p><strong>email</strong> marta@marta.com</p>
-          <Button onClick={this.handleLoadUserClick(users.marta)}>Load user</Button>  
-        </div>
+        {map(loadFromState.users, (user, key) => {
+          return (
+            <div key={key}>
+              <h4>User {(key + 1)}</h4>
+              <p><strong>Name:</strong> {user.name}</p>
+              <p><strong>Date of birth:</strong> {user.dob}</p>
+              <p><strong>email:</strong> {user.email}</p>
+              <Button onClick={this.handleLoadUserClick(user)}>Load user</Button>
+            </div>
+          );
+        })}
       </Form>
     )
   }
@@ -101,7 +75,7 @@ LoadFromState = reduxForm({
 })(LoadFromState);
 
 function mapStateToProps(state) {
-  return { loadUserAccount: state.loadFromState }
+  return { loadFromState: state.loadFromState }
 }
 
 function mapDispatchToProps(dispatch) {

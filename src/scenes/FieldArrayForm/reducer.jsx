@@ -1,4 +1,4 @@
-export const SUBMIT_FORM = 'fildArrayFrom/SUBMIT_FORM';
+const SUBMIT_FORM = 'fieldArrayFrom/SUBMIT_FORM';
 
 export function reducer(state = null, action) {
   switch(action.type) {
@@ -10,9 +10,7 @@ export function reducer(state = null, action) {
   }
 }
 
-export function submitForm(formValues) {
-  return { type: SUBMIT_FORM, payload: formValues }
-}
+const submitForm = (formValues) => ({ type: SUBMIT_FORM, payload: formValues });
 
 export const actions = {
   submitForm,

@@ -4,7 +4,7 @@ import BooleanState from './scenes/BooleanState/index';
 import BasicForm from './scenes/BasicForm/index';
 import DinamicForm from './scenes/DynamicForm/index';
 import FieldArrayForm from './scenes/FieldArrayForm/index';
-import LoadFromState from './scenes/LoadFromState/LoadFromState';
+import LoadFromState from './scenes/LoadFromState/index';
 import WizardForm from './scenes/WizardForm/WizardForm';
 import MixedTechniqueForm from './scenes/MixedTechniqueForm';
 import SwitchContent from './scenes/SwitchContent';
