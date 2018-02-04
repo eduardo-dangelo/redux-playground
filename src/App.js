@@ -9,6 +9,8 @@ import WizardForm from './scenes/WizardForm/index';
 import MixedTechniqueForm from './scenes/MixedTechniqueForm';
 import SwitchContent from './scenes/SwitchContent';
 import FaBars from 'react-icons/lib/fa/bars';
+import FaGithub from 'react-icons/lib/fa/github';
+
 import './App.scss';
 
 class App extends Component {
@@ -123,6 +125,11 @@ class App extends Component {
             </div>
           </Tab>
         </Tabs>
+        <div className="footer">
+          <a href="https://github.com/eduardo-dangelo/redux-playground" rel="noopener">
+            <FaGithub/> eduardo-dangelo
+          </a>
+        </div>
       </div>
     );
   }

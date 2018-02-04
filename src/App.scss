@@ -132,6 +132,12 @@ INTERNAL PAGE
 .internal-page {
   animation: pageFadeIn .5s ease-in 1;
   color: #777777;
+  padding-bottom: 30px;
+  margin-bottom: 60px;
+  background: white;
+  position: relative;
+  z-index: 1;
+
 
   .page-container {
     position: relative;
@@ -139,6 +145,18 @@ INTERNAL PAGE
     top: 0;
     animation: contentFadeIn .5s ease-out 1;
   }
+}
+
+.footer {
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+  position: fixed;
+  height: 60px;
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  background: #dddddd;
+  z-index: 0;
 }
 
 
