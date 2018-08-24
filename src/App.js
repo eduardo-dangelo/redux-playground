@@ -10,7 +10,6 @@ import MixedTechniqueForm from './scenes/MixedTechniqueForm';
 import SwitchContent from './scenes/SwitchContent';
 import FaBars from 'react-icons/lib/fa/bars';
 import FaGithub from 'react-icons/lib/fa/github';
-
 import './App.scss';
 
 class App extends Component {
