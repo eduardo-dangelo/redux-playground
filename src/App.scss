@@ -4,6 +4,7 @@ GLOBAL
 
 .App {
   text-align: center;
+  background: white;
   //font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 }
 
@@ -13,23 +14,24 @@ HEADER
 
 .App-header {
   background: #222;
-  padding: 45px 0;
-  height: 220px;
+  padding: 15px;
+  //height: 220px;
   color: #aaaaaa;
-  text-align: center;
+  text-align: left;
   border-bottom: 1px solid #aaaaaa;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  //box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 
   @media all and (max-width: 540px) {
     height: 250px;
   }
 
   h1 {
-    margin: 30px auto;
-    text-shadow: 0 4px 8px #000;
+    margin: 0;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
   }
 
   .burger-menu-btn {
+    display: none;
     margin: auto;
     background: none;
     color: #aaaaaa;
@@ -37,6 +39,10 @@ HEADER
 
 }
 
+.app-body {
+  position: relative;
+  background: white;
+}
 
 /*--------------
 MAIN MENU
@@ -45,36 +51,50 @@ MAIN MENU
 .nav-tabs {
   margin: auto;
   max-width: 900px;
-  border: none;
+  height: 100%;
+  //border: 1px solid orange;
+  //border-right: 1px solid grey;
+  //min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  float: left;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 15%;
 
   li {
-    width: 25%;
-    padding: 5px;
-    position: relative;
-    top: 40px;
+    //border-bottom: 1px solid grey;
+    //padding: 2px 0;
+    //width: 25%;
+    //padding: 5px;
+    //position: relative;
+    //top: 40px;
     font-size: 16px;
-    font-weight: bold;
+    overflow: visible;
+    //font-weight: bold;
     opacity: 1;
     //animation: menuFadeIn .6s ease-out;
 
     a {
       display: flex;
-      justify-content: space-around;
-      border: #aaaaaa 1px solid;
-      height: 120px;
+      justify-content: flex-start;
+      border: none;
+      //height: 120px;
       border-radius: 0;
       background: #fff;
       align-items: center;
-      text-align: center;
+      text-align: left;
       transition: .3s ease;
       position: relative;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-      font-size: 20px;
+      //box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      //font-size: 20px;
       color: #aaaaaa;
+      margin: 0;
 
       &:hover {
         background: #f7f7f7;
-        border: #aaaaaa 1px solid;
 
         &:after {
           content: '';
@@ -107,8 +127,10 @@ MAIN MENU
   .active {
 
     a {
-      box-shadow: 0 2px 16px #000;
+      //box-shadow: 0 2px 16px #000;
       background: #004466 !important;
+      color: white !important;
+      border: none !important;
     }
   }
 
@@ -130,18 +152,22 @@ INTERNAL PAGE
  ------------*/
 
 .internal-page {
+  border-left: 1px solid grey;
   animation: pageFadeIn .5s ease-in 1;
   color: #777777;
   padding-bottom: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 0;
   background: white;
   position: relative;
+  float: left;
+  width: 85%;
+  min-height: 500px;
   z-index: 1;
 
 
   .page-container {
     position: relative;
-    margin: auto;
+    margin: 60px auto;
     top: 0;
     //animation: contentFadeIn .5s ease-out 1;
   }
@@ -149,11 +175,12 @@ INTERNAL PAGE
 
 .footer {
   //box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
-  position: fixed;
+  position: relative;
   height: 60px;
-  bottom: 0;
+  //bottom: 0;
   width: 100%;
   margin: auto;
+  overflow: auto;
   padding: 20px;
   background: #dddddd;
   z-index: 0;

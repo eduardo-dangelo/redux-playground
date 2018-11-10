@@ -36,7 +36,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Redux & Redux-Form Playground</h1>
+          <h1>Redux Playground</h1>
           <Button
             className={showMenu ? 'hidden' : 'burger-menu-btn'}
             onClick={this.handleClick}
@@ -44,86 +44,88 @@ class App extends Component {
             <FaBars />
           </Button>
         </header>
-        <Tabs
-          activeKey={this.state.key}
-          onSelect={this.handleSelect}
-          className={showMenu ? '' : 'hide-menu'}
-          id="nav-tab"
-        >
-          <Tab
-            title="Switch Content"
-            eventKey={1}
-            className="internal-page"
+        <div className="app-body">
+          <Tabs
+            activeKey={this.state.key}
+            onSelect={this.handleSelect}
+            className={showMenu ? '' : ''}
+            id="nav-tab"
           >
-            <div className="page-container">
-              <SwitchContent/>
-              {/*<ItemList />*/}
-            </div>
-          </Tab>
-          <Tab
-            title="Boolean States"
-            eventKey={2}
-            className="internal-page"
-          >
-            <div className="page-container">
-              <BooleanState />
-            </div>
-          </Tab>
-          <Tab
-            title="Basic Form"
-            eventKey={3}
-            className="internal-page"
-          >
-            <div className="page-container">
-              <BasicForm />
-            </div>
-          </Tab>
-          <Tab
-            title="Dynamic Form"
-            eventKey={4}
-            className="internal-page"
-          >
-            <div className="page-container">
-              <DynamicForm />
-            </div>
-          </Tab>
-          <Tab
-            title="Field Array Form"
-            eventKey={5}
-            className="internal-page"
-          >
-            <div className="page-container">
-              <FieldArrayForm />
-            </div>
-          </Tab>
-          <Tab
-            title="Load From State"
-            eventKey={6}
-            className="internal-page"
-           >
-            <div className="page-container">
-              <LoadFromState />
-            </div>
-          </Tab>
-          <Tab
-            title="Wizard Form"
-            eventKey={7}
-            className="internal-page"
-          >
-            <div className="page-container">
-              <WizardForm />
-            </div>
-          </Tab>
-          <Tab
-            title="Mixed Technique Form"
-            eventKey={8}
-            className="internal-page"
-          >
-            <div className="page-container">
-              <MixedTechniqueForm />
-            </div>
-          </Tab>
-        </Tabs>
+            <Tab
+              title="Switch Content"
+              eventKey={1}
+              className="internal-page"
+            >
+              <div className="page-container">
+                <SwitchContent/>
+                {/*<ItemList />*/}
+              </div>
+            </Tab>
+            <Tab
+              title="Boolean States"
+              eventKey={2}
+              className="internal-page"
+            >
+              <div className="page-container">
+                <BooleanState />
+              </div>
+            </Tab>
+            <Tab
+              title="Basic Form"
+              eventKey={3}
+              className="internal-page"
+            >
+              <div className="page-container">
+                <BasicForm />
+              </div>
+            </Tab>
+            <Tab
+              title="Dynamic Form"
+              eventKey={4}
+              className="internal-page"
+            >
+              <div className="page-container">
+                <DynamicForm />
+              </div>
+            </Tab>
+            <Tab
+              title="Field Array Form"
+              eventKey={5}
+              className="internal-page"
+            >
+              <div className="page-container">
+                <FieldArrayForm />
+              </div>
+            </Tab>
+            <Tab
+              title="Load From State"
+              eventKey={6}
+              className="internal-page"
+             >
+              <div className="page-container">
+                <LoadFromState />
+              </div>
+            </Tab>
+            <Tab
+              title="Wizard Form"
+              eventKey={7}
+              className="internal-page"
+            >
+              <div className="page-container">
+                <WizardForm />
+              </div>
+            </Tab>
+            <Tab
+              title="Mixed Technique Form"
+              eventKey={8}
+              className="internal-page"
+            >
+              <div className="page-container">
+                <MixedTechniqueForm />
+              </div>
+            </Tab>
+          </Tabs>
+        </div>
         <div className="footer">
           <a href="https://github.com/eduardo-dangelo/redux-playground" rel="noopener">
             <FaGithub/> eduardo-dangelo
