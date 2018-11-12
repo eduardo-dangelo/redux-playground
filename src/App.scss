@@ -5,6 +5,8 @@ GLOBAL
 .App {
   text-align: center;
   background: white;
+  //font-family: 'Ubuntu', sans-serif;
+  font-family: 'Nunito', sans-serif;
   //font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 }
 
@@ -18,16 +20,16 @@ HEADER
   //height: 220px;
   color: #aaaaaa;
   text-align: left;
-  border-bottom: 1px solid #aaaaaa;
+  border-bottom: 1px solid #252525;
   //box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 
   @media all and (max-width: 540px) {
     height: 250px;
   }
 
-  h1 {
-    margin: 0;
-    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  h2 {
+    margin: 5px 0;
+    //text-shadow: 0 4px 8px rgba(0,0,0,0.3);
   }
 
   .burger-menu-btn {

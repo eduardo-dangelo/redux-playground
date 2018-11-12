@@ -36,7 +36,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Redux Playground</h1>
+          <h2>Redux Playground</h2>
           <Button
             className={showMenu ? 'hidden' : 'burger-menu-btn'}
             onClick={this.handleClick}
