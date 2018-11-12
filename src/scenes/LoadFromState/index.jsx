@@ -29,7 +29,7 @@ class LoadFromState extends React.Component {
     const { handleSubmit, loadFromState } = this.props;
 
     return (
-      <Form onSubmit={handleSubmit}>
+      <Form autocomplete="off" onSubmit={handleSubmit}>
         <h1>Load from State</h1>
         <div className="form-container">
           <FormGroup controlId="name">

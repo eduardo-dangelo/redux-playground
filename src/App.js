@@ -10,6 +10,7 @@ import MixedTechniqueForm from './scenes/MixedTechniqueForm';
 import SwitchContent from './scenes/SwitchContent';
 import FaBars from 'react-icons/lib/fa/bars';
 import FaGithub from 'react-icons/lib/fa/github';
+import logo from './img/redux _logo.png'
 import './App.scss';
 
 class App extends Component {
@@ -20,7 +21,7 @@ class App extends Component {
   handleClick = () => {
     this.setState({
       showMenu: true,
-      key: null,
+      // key: null,
     });
   }
 
@@ -36,9 +37,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h2>Redux Playground</h2>
+          <div className="title">
+            <img src={logo} alt="redux"/>
+            <h2>Redux Playground</h2>
+          </div>
           <Button
-            className={showMenu ? 'hidden' : 'burger-menu-btn'}
+            className={'burger-menu-btn'}
             onClick={this.handleClick}
           >
             <FaBars />
@@ -48,8 +52,8 @@ class App extends Component {
           <Tabs
             activeKey={this.state.key}
             onSelect={this.handleSelect}
-            className={showMenu ? '' : ''}
             id="nav-tab"
+            className={showMenu ? 'show-menu-xs' : 'hide-menu-xs'}
           >
             <Tab
               title="Switch Content"

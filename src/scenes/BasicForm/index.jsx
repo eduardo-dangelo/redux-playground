@@ -19,7 +19,7 @@ class BasicForm extends Component {
     const { handleSubmit, reset, basicFormValues } = this.props;
 
     return (
-      <Form onSubmit={handleSubmit(this.submitForm)}>
+      <Form autocomplete="off" onSubmit={handleSubmit(this.submitForm)}>
         <h1>Basic Form</h1>
         <div className="form-container">
           <FormGroup controlId="first-name">

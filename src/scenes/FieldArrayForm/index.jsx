@@ -19,7 +19,7 @@ class FieldArrayForm extends Component {
     const { handleSubmit, fieldArrayFormValues } = this.props;
  
     return (
-      <Form onSubmit={handleSubmit(this.submitForm)}>
+      <Form autocomplete="off" onSubmit={handleSubmit(this.submitForm)}>
         <h1>Field Array Form</h1>
         <FieldArray name="user" component={UserForm}/>
         <div>

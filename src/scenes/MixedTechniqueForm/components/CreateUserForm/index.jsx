@@ -18,7 +18,7 @@ class CreateUserForm extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <Form onSubmit={handleSubmit(this.submitForm)}>
+      <Form autocomplete="off" onSubmit={handleSubmit(this.submitForm)}>
       <h3>Create User</h3>
         <div className="form-container">
           <FormGroup controlId="first-name">

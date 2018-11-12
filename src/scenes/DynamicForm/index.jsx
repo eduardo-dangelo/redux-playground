@@ -19,7 +19,7 @@ class DynamicForm extends Component {
     const { handleSubmit, reset, firstName, lastName, email, gender, dynamicFormValues } = this.props;
 
     return (
-      <Form onSubmit={handleSubmit(this.submitForm)}>
+      <Form onSubmit={handleSubmit(this.submitForm)} autocomplete="off">
 
         <h1>Dynamic Form</h1>
 

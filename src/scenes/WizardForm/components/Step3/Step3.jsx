@@ -8,7 +8,7 @@ class Step3 extends Component {
     const { handleSubmit, onClickBack } = this.props;
     
     return (
-      <Form onSubmit={handleSubmit}>
+      <Form autocomplete="off" onSubmit={handleSubmit}>
       <h3>Step 3</h3>
         <div className="form-container">
           <FormGroup controlId="name">
