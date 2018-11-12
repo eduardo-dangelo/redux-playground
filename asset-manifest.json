@@ -1,8 +1,9 @@
 {
-  "main.css": "static/css/main.65027555.css",
-  "main.css.map": "static/css/main.65027555.css.map",
-  "main.js": "static/js/main.9938cc0d.js",
-  "main.js.map": "static/js/main.9938cc0d.js.map",
+  "main.css": "static/css/main.55b0a223.css",
+  "main.css.map": "static/css/main.55b0a223.css.map",
+  "main.js": "static/js/main.1dc6335a.js",
+  "main.js.map": "static/js/main.1dc6335a.js.map",
+  "static\\media\\redux _logo.png": "static/media/redux _logo.0a067a37.png",
   "static\\media\\switch_off.png": "static/media/switch_off.d1d3946e.png",
   "static\\media\\switch_on.png": "static/media/switch_on.2b02e163.png"
 }
